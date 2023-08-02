@@ -3,6 +3,9 @@ import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 
 export default defineConfig({
+  productionSourceMap: false,
+  drop_console: true,
+  drop_debugger: true,
   plugins: [vue()],
   resolve: {
     alias: {
@@ -16,7 +19,7 @@ export default defineConfig({
     port:9000,
     proxy: {
       '/api': {
-        target: 'http://192.168.1.10:3199/',
+        target: 'http://192.168.99.112:3199/',
         //target: 'http://jk.royalgaming.today:3198',
         ws: true,
         changeOrigin: true,

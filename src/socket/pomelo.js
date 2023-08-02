@@ -26,7 +26,7 @@ function conn(cb) {
   console.log("&&&&&&&", msg2);
   p_server.init(
     {
-      host: process.env.NODE_ENV == 'development' ? '192.168.1.10' : window.location.host,
+      host: process.env.NODE_ENV == 'development' ? '192.168.99.112' : window.location.host,
       //host: window.location.host,
       port: process.env.NODE_ENV ==  'development' ? '9014' : '/conn1/',
       log: true
@@ -43,12 +43,12 @@ function conn(cb) {
             {
               //host: res.host,
              // host: window.location.host,
-              host: process.env.NODE_ENV == 'development' ? '192.168.1.10' : window.location.host,
+              host: process.env.NODE_ENV == 'development' ? '192.168.99.112' : window.location.host,
               port: process.env.NODE_ENV == 'development' ? res.port  : pt,
               log: true
             },
             function (res) {
-              console.log(res);
+              console.log(res,"inside *****************");
               if (res.code == 200) {
                 p_server2.request('connector.entryHandler.entry', msg2, res => {
                   console.log('Connector res ', res)

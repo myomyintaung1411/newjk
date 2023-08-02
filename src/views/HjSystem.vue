@@ -803,10 +803,15 @@ const bjlgreaterThan = (data) => {
 }
 const lhgreaterThan = (data) => {
     if (data != undefined || data != null) {
-        if (data?.dragon > data?.tiger) {
-            return (data?.dragon - data?.tiger).toFixed(2)
+        // if (data?.dragon > data?.tiger) {
+        //     return (data?.dragon - data?.tiger).toFixed(2)
+        // } else {
+        //     return (data?.dragon - data?.tiger).toFixed(2)
+        // }
+         if (data?.banker > data?.player) {
+            return (data?.banker - data?.player).toFixed(2)
         } else {
-            return (data?.dragon - data?.tiger).toFixed(2)
+            return (data?.player - data?.banker).toFixed(2)
         }
     } else {
         return 0
@@ -1124,7 +1129,7 @@ function _roadDataModifedDT(data) {
     splitData?.forEach((split, i) => {
         addOneDragonTiger(split)
     })
-    console.log(splitData, "splitData length ************");
+   // console.log(splitData, "splitData length ************");
 }
 
 function _roadDataModifed(data) {
